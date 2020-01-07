@@ -1,0 +1,105 @@
+# Any line followed by a '#' character is ignored
+# Section headings must be in square brackets
+# Subsections within a section should follow the format:
+#   [filename within code directory][tab character \t][subsection title]
+
+[Combinatorial optimization & Dynamic Programming]
+#convex_hull_dynamic_2.cpp	Dynamic Programming Optimization - Convex Hull Trick
+convex_hull_min.cpp	Dynamic Programming Optimization - Convex Hull Trick2
+convex_hull_neal_wu.cpp	Dynamic Programming Optimization - Convex Hull Trick3
+convex_hull_neal_wu2.cpp	Dynamic Programming Optimization - Convex Hull Trick4
+#convex_hull_trick_min.cpp	Dynamic Programming Optimization - Min Convex Hull Trick5
+#dynamicconvexhulltrick.cpp	Dynamic Programming Optimization - Min Convex Hull Trick5
+digit_dp.cpp	Digit DP
+sos_dp_neal_wu.cpp	SOS DP
+
+[Geometry]
+geometry_best_includes_all_features.cpp	Geometry1
+#geometry2.cpp	Geometry2
+
+[Numerical algorithms]
+chineseremaindertheorem.cpp	Chinese Reaminder Theorem
+linear_diaphontine_equation_tourist.cpp	Linear Diaphontine Equation
+mobius.cpp	Mobius Function
+phi_euler_totient_sieve.cpp	Euler Phi using Sieve
+nCr.cpp	NCR Implementation 1
+#nCr_4.cpp	NCR Implementation 2
+ntt.cpp	NTT Implementation 1
+ntt_Implement.cpp	NTT Implementation 2
+#ntt_implementation.cpp	NTT Implementation 3
+fft-mod.cpp	Implementation of FFT
+FHWT.cpp	Implementation of FHWT
+FHWT_for_AND_Operator.cpp	Implementation of FHWT for AND operator
+fhwt_tourist.cpp	Implementation of FHWT - tourist
+#2SAT.cpp	Implementation of 2SAT
+discretelog.cpp	Discrete Logarithm
+factorisation.cpp	Factorisation and Primality Testing
+factorization_tourist_template.cpp	Factorisation and Primality Testing from tourist
+
+[Graph algorithms]
+BellmanFordSingleSourceShortestDistance.cpp	Bellman Ford
+biconnected.cpp	Biconnected components
+bipartite.cpp	Bipartite Graph
+bipartite_match.cpp	Bipartite Matching Implementation
+bipartite_union_find_neal_wu.cpp	Bipartite Matching with Union Find Implementation	
+#Dinic.cc	Dinic algorithm
+#dinic_algorithm_neal_wu.cpp	Dinic Implementation
+directed_graph_check_cycle.cpp	Cycle Checking in Directed Graph
+#hopcraft.cpp	Implementation of hopcraft matching
+lca_binary_lifting.cpp	Implementation of lca using Binary lifting
+maxflow_mincost.cpp	MaxFlow Algorithm
+prims-algo.cpp	Prims Algorithm
+#min_cost_flow_neal_wu.cpp	Min Cost Flow
+scc.cpp	SCC Implementation
+topological_sorting.cpp	Topological Sorting
+union_find.cpp	Union Find
+
+[Data structures]
+fenwick_tree_struct.cpp	Binary Indexed Tree
+2dBIT.cpp	Binary Indexed Tree - 2D
+segment_bucket_search_in_range_sqrt.cpp	Query over range using SQRT Decomposition
+segmenttree.cpp	Segmenttree
+segmenttreelazy.cpp	Segmenttree Lazy Propagation
+#segment_tree_neal_wu.cpp	Segmenttree2
+centroid_decomposition.cpp	Implementation of Centroid Decomposition
+dynamic_seg_tree_ashishgup.cpp	Implementation of Dynamic Segment tree using Trie
+heavy_path.cpp	HLD1
+hld_neal_wu.cpp	HLD2
+CartesianTree.cpp	Implementation of CartesianTree
+#light_treap.cpp	Implementation of treap
+treap.cpp	Treap DS
+triexor.cpp	Trie XOR
+RMQ_Max.cpp	Maximum over range RMQ
+#RMQ_snippets_neal_wu.cpp	RMQ Snippets
+querying_over_pairs_neal_wu.cpp	Querying over Pairs maximum
+#LazySegmentTree.cpp	Implementation of LazySegmentTree
+mergesorttree.cpp	Merge Sort tree
+monotonic_rmq_neal_wu.cpp	Monotonic RMQ
+mos_algo.cpp	Mos Algorithm SQRT Decomposition
+persistentsegmenttree.cpp	Persistent Segmenttree
+persistent_segment_tree_no_pointer.cpp	Persistent Segmenttree with no Pointers
+persistent-trie.cpp	Persistent Trie
+sparse1d.cpp	Sparse DS - 1D
+sparse2d.cpp	Sparse DS - 2D
+
+[String Manipulation]
+#aho_corasick.cpp	Implementation of Aho Corasick
+hashing.cpp	String Hashing
+kmp_function.cpp	KMP Search
+zfunction.cpp	Z Function
+manacher.cpp	Manchaser algorithm
+palindromic_tree.cpp	Palindromic Tree
+#suffixarray.cpp	Suffix Array
+#suffix_automation.cpp	Suffix Automation
+
+[Miscellaneous]
+gaussian_elimination_ashish_gup.cpp	Implementation of Gauss Jordan
+matrix_expo_ashishgup.cpp	Implementation of Matrix Exponentation
+lis.cpp	LIS Implementation in nlogn using Binary Search
+ordered_set.cpp	Ordered Set in C++
+#modularpowers.cpp Modular Powers
+mt_random.cpp	C++ Random Number Generator
+cpp_compile.sublime-build	Compile build
+
+[Extras]
+vivek.cpp	Stress testing in C++ shell script

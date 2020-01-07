@@ -1,0 +1,77 @@
+\section{STL Cheat Sheet}
+
+\Section{Containers}
+
+\Topic{map}
+
+\begin{tabular}{p{2cm}|p{5cm}|p{5.5cm}}
+    constructor &   map\textless Key, T, [mycompare]\textgreater     &   initialize through a range(of map), another map or iteratively \\
+    swap    &   void swap(map\& x)   &   Swaps the contents of two maps in $\mathcal{O}(1)$ time. \\
+    emplace\_hint    &   emplace\_hint(it, key, T)    &   Insert using the hint, good hint may mean $\mathcal{O}(1)$  \\
+    lower\_bound &   lower\_bound(Key k)  &   Returns an iterator pointing to the first element in the container whose key is not considered to go before k \\
+    upper\_bound &   upper\_bound(Key k)  &   Returns an iterator pointing to the first element in the container whose key is considered to go after k. 
+\end{tabular}
+
+from an iterator, access it as an pair, first is key, other is value, mycompare gets the keys as input.     begin, end, rbegin, rend, empty, size, operator[], insert, delete, find ...
+
+\Topic{queue} \\
+empty, size, front, back, push, pop, swap(O(1))(c++11) ...
+
+\Topic{priority\_queue} \\
+\begin{tabular}{p{2cm}|p{5cm}|p{5.5cm}}
+    constructor &   priority\_queue\textless T, [vector]\textless int\textgreater ], [mycompare]\textgreater    &   iteratively, range  \\
+\end{tabular}
+
+empty, size, top, push, pop, swap(O(1))(c++11) ...
+
+\Topic{Deque} \\
+Construction similar to vector \\
+begin, end, size, empty, operator[], front, back, push\_front, push\_back, pop\_front, pop\_back, insert, erase, swap, clear .....
+
+\Topic{Set} \\
+Construct using range, iteratively, another set, using a mycompare \\
+begin, end, empty, size, insert, erase, swap, clear, emplace(\_hint), find, count, (lower\_bound, upper\_bound)(refer map for clarification) ... 
+
+\Topic{Vector} \\
+Construct iteratively, by range, by value and length, by another vector \\
+operator=, begin, end, size, empty, front, back, push\_back, pop\_back, insert(at any position using iterators), erase, swap, clear ...
+
+\Section{Algorithms}
+
+\Topic{Non-modifying sequential operations}
+
+\begin{tabular}{p{2cm}|p{5cm}|p{5.5cm}}
+	funcName(s)	&	return type and arguements	&	Details	\\
+	all\_of, any\_of, none\_of	& bool funcName(it first, it last, [UnaryPredicate])	&	Test for conditions in the given range	\\
+	for\_each 	&	fn funcName(it first, it last, Function fn) &	executes function fn with arguements as elements in the range \\
+	find, find\_if, find\_if\_not	&	it funcName(it first, it last, T val (or) Function fn)	&	returns iterator to first element which is equal to/satisfies fn/dissatisfies fn \\
+
+\end{tabular}
+
+\Topic{Modifiers}
+
+\begin{tabular}{p{2cm}|p{5cm}|p{5.5cm}}
+	copy   &   iter copy (it first, it last, it result)   &   Copies the elements in the range [first,last) into the range beginning at result \\
+	copy\_n   &   iter copy\_n (it first, size n, it result)   &   Copies the first n elements from the range beginning at first into the range beginning at result \\
+	swap   &   \textless class T\textgreater void swap (T\&a, T\&b)   &   Exchanges the values of a and b \\
+	replace   &   \textless class T\textgreater void replace (it first, it last, const T\& ov, const T\& nv)   &   Assigns nv to all the elements in the range [first,last) that compare equal to ov. Uses == to compare \\
+	fill   &   \textless class T\textgreater void fill (it first, it last, const T\& val)   &   Assigns val to all the elements in the range [first,last) \\
+	fill\_n   &   \textless class T\textgreater void fill\_n (it first, size n, const T\& val)   &    assigns val to the first n elements of the sequence pointed by first \\
+	remove   &   \textless class T\textgreater iter remove (it first, it last, const T\& val)   &   transforms the range [first,last) into a range with all the elements that compare equal to val removed, and returns an iterator to the new end of that range. Uses == to compare \\
+\end{tabular}
+
+
+\Topic{Partitions}
+
+\begin{tabular}{p{2cm}|p{5cm}|p{5.5cm}}
+    partition   &   iter partition (it first, it last, UnaryPredicate)  &   Reaaranges the range such that all elements which satisfy the predicate are before which do not, returns an iter to first which doesn't \\
+    stable\_partition    &   Same as above   &   same as above but stable \\
+\end{tabular}
+
+\Topic{Sorting}
+
+\begin{tabular}{p{2cm}|p{5cm}|p{5.5cm}}
+    sort, stable\_sort   &   void funcName(it first, it second, [mycompare])   &   Sorts/stably sorts with/out mycompare function, mycompare should return true for a\textless b if sorting is required in increasing order \\
+    partial\_sort    &   void partial\_sort(it first, it middle, it last, [mycompare])    &   partitions about the middle position (similar to partition used in median look-up) elements left to middle are sorted \\
+
+\end{tabular}

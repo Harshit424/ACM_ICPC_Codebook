@@ -1,0 +1,61 @@
+{
+  "cmd": ["g++", "-std=c++17", "$file", "-o", "${file_path}/${file_base_name}",
+          /*"-Wall",*/ "-Wextra", /*"-pedantic",*/ /*"-O2",*/ /*"-Wshadow",*/ /*"-Wformat=2",*/
+          "-Wfloat-equal", // "-Wconversion", "-Wlogical-op", "-Wcast-qual",
+          "-Wcast-align", "-D_GLIBCXX_DEBUG", "-D_GLIBCXX_DEBUG_PEDANTIC",
+          "-D_FORTIFY_SOURCE=2", /*"-fsanitize=address",*/"-fsanitize=undefined", "-Wall",
+          "-fno-sanitize-recover","-fstack-protector", "-DLOCAL"
+        ],
+  "selector": "source.cpp",
+  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+  "working_dir": "${file_path}",
+  "variants":
+  [
+      {
+          "name": "Run",
+          "shell": true,
+          // "cmd": ["gnome-terminal -e 'bash -c \"${file_path}/${file_base_name}; echo; echo Press any key to continue...; read -n 1 -s\"' > /dev/null"],
+          "cmd": ["gnome-terminal -e 'bash -c \"${file_path}/${file_base_name};echo;echo;  exec bash\"'"],
+      }
+  ]
+}
+// "cmd": ["gnome-terminal -e 'bash -c \"${file_path}/${file_base_name};echo;echo;  echo Press ENTER to continue; read line;exit; exec bash\"'"],
+// -Wall -Wextra -pedantic -std=c++11 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion
+// -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align
+// -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined
+// -fno-sanitize-recover -fstack-protector
+// {
+//  "cmd":["bash", "-c", "g++ -std=c++14 -Wall '${file}' -o '${file_path}/${file_base_name}' && '${file_path}/${file_base_name}'"],
+//  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+//  "working_dir": "${file_path}",
+//  "selector": "source.c, source.c++",
+//  "variants":
+//  [
+//    {
+//      "name": "Run",
+//      "cmd":["bash", "-c", "g++ -std=c++14 '${file}' -o '${file_path}/${file_base_name}' && '${file_path}/${file_base_name}'"]
+//    }
+//  ]
+// }
+// {
+//  "cmd": ["g++", "-std=c++14", "${file}", "-o", "${file_path}/${file_base_name}"],
+//  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+//  "working_dir": "${file_path}",
+//  "selector": "source.c, source.c++",
+//  "variants":
+//  [
+//    {
+//      "name": "Run",
+//      "cmd":["bash", "-c", "g++ -std=c++1y '${file}' -o '${file_path}/${file_base_name}' && '${file_path}/${file_base_name}'"]
+//    }
+//  ]
+// }
+/*****Stress Testing Starts*****/
+for((i = 1; ; ++i)); do
+    echo $i
+    ./gen $i > int
+    # ./a < int > out1
+    # ./brute < int > out2
+    # diff -w out1 out2 || break
+    diff -w <(./a < int) <(./brute < int) || break
+done
